@@ -1,0 +1,76 @@
+import numpy as np
+
+V1 = np.array([[4, 5, 6], [5, 4, 6], [2, 3, 4]])
+V2 = np.array([[6, 7, 8], [8, 7, 6], [4, 2, 4]])
+V3 = np.array([[8, 9, 2], [10, 9, 2], [3, 6, 2]])
+V4 = np.identity(3)
+V5 = np.zeros([3,3])
+
+print("Shapes of Matrices")
+print(V1.shape)
+print(V2.shape)
+print(V3.shape)
+print(V4.shape)
+print(V5.shape)
+print("_____________________________________________________________________" '\n')
+
+
+def Commutative_Property(M1, M2):
+    V1V2 = np.dot(M1, M2)
+    V2V1 = np.dot(M2, M1)
+    print("Commutative Property" '\n')
+    print("V1V2" '\n', V1V2)
+    print("V2V1" '\n', V2V1)
+    print("_____________________________________________________________________" '\n')
+
+
+def Associative_Property(M1, M2, M3):
+    V2V3 = np.dot(M2, M3)
+    V2V3V1 = np.dot(M1, V2V3)
+    V1V2 = np.dot(M1, M2)
+    V1V2V3 = np.dot(V1V2, M3)
+    print("Associative Property" '\n')
+    print("V1V2V3" '\n', V1V2V3)
+    print("V2V3V1" '\n', V2V3V1)
+    print("_____________________________________________________________________" '\n')
+
+
+def Distributive_Property(M1, M2, M3):
+    V2V3 = np.add(M2, M3)
+    V1V2V3 = np.dot(M1, V2V3)
+    V1V2 = np.dot(M1, M2)
+    V1V3 = np.dot(M1, M3)
+    print("Distributive Property" '\n')
+    print("V1V2V3")
+    print(V1V2V3, '\n   =\n', V1V2 + V1V3)
+
+    V2V3V1 = np.dot(V2, M1)
+    V2V1 = np.dot(M2, M1)
+    V3V1 = np.dot(M3, M1)
+    print("V2V3V1")
+    print(V2V3V1, '\n    =\n', V2V1 + V3V1)
+    print("_____________________________________________________________________" '\n')
+
+
+def Multiplicative_Identity_Property(M1, MIP):
+    print("Multiplicative Identity Property" '\n')
+    Identity = np.dot(M1, MIP)
+    print(Identity, '\n   =\n', M1)
+    print("_____________________________________________________________________" '\n')
+
+
+def Multiplicative_Property_of_zero(M1, Zero):
+    print("Multiplicative Property of Zero" '\n')
+    Z = np.dot(M1, Zero)
+    print(Z, '\n   =\n', Zero)
+    print("_____________________________________________________________________" '\n')
+
+
+#def Dimension_Property
+
+
+Commutative_Property(V1, V2)
+Associative_Property(V1, V2, V3)
+Distributive_Property(V1, V2, V3)
+Multiplicative_Identity_Property(V1, V4)
+Multiplicative_Property_of_zero(V1, V5)

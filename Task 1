@@ -66,7 +66,11 @@ def Multiplicative_Property_of_zero(M1, Zero):
     print("_____________________________________________________________________" '\n')
 
 
-#def Dimension_Property
+def Dimension_Property(M1, M2):
+  A = M1.shape[0]
+  B = M2.shape[1]
+  print(A, B)
+
 
 
 Commutative_Property(V1, V2)
@@ -74,3 +78,4 @@ Associative_Property(V1, V2, V3)
 Distributive_Property(V1, V2, V3)
 Multiplicative_Identity_Property(V1, V4)
 Multiplicative_Property_of_zero(V1, V5)
+Dimension_Property(V1,V5)
